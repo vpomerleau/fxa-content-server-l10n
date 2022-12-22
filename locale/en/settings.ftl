@@ -34,19 +34,20 @@ product-firefox-relay = Firefox Relay
 -google-play = Google Play
 -app-store = App Store
 
-##  Application page title and footer
+## LinkRememberPassword component
 
-app-default-title = { -product-firefox-accounts }
-# This string is used as the title of the page.
+# Link that users can follow to sign in to their account
+# This link exits the Reset Password flow
+remember-pw-link = Remember your password? Sign in
+
+## Ready component
+
+ready-confirmation = Your password has been reset
+# This is a string that tells the user they can use whatever service prompted them to reset their password
 # Variables:
-#   $title (String) - the name of the current page
-#                      (for example: "Two-step authentication")
-app-page-title = { $title } | { -product-firefox-accounts }
-app-footer-mozilla-logo-label = { -brand-mozilla } logo
-app-footer-privacy-notice = Website Privacy Notice
-app-footer-terms-of-service = Terms of Service
-
-##
+# $serviceName (String) - the service which caused the user to reset their password
+ready-use-service = You’re now ready to use { $serviceName }
+ready-continue = Continue
 
 ## Alert Bar
 
@@ -615,3 +616,21 @@ auth-error-139 = Secondary email must be different than your account email
 auth-error-155 = TOTP token not found
 auth-error-183-2 = Invalid or expired confirmation code
 auth-error-1008 = Your new password must be different
+
+## ResetPassword page
+
+# If more appropriate in a locale, this can stand alone as "Continue to account settings"
+reset-password-heading-w-default-service = Reset password <span>to continue to account settings</span>
+# If more appropriate in a locale, this can stand alone as "Continue to { $serviceName }"
+# { $serviceName } represents a product name (e.g., Mozilla VPN) that will be passed in as a variable
+reset-password-heading-w-custom-service = Reset password <span>to continue to { $serviceName }</span>
+
+reset-password-warning-message = <span>Note:</span> When you reset your password, you reset your account. You may lose some of your personal information (including history, bookmarks, and passwords). That’s because we encrypt your data with your password to protect your privacy. You’ll still keep any subscriptions you may have and { product-pocket } data will not be affected.
+
+reset-password-button = Begin reset
+reset-password-success-alert = Password reset
+reset-password-error-general = Sorry, there was a problem resetting your password
+reset-password-error-unknown-account = Unknown account
+
+reset-password-with-recovery-key-verified-generate-new-key = Generate a new account recovery key
+reset-password-with-recovery-key-verified-continue-to-account = Continue to my account
